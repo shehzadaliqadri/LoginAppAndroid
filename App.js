@@ -5,21 +5,23 @@ import {
   Image,
   StyleSheet,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
 
 
 const App = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  let user = '';
+  const dimetions = Dimensions
+
   return (
     <View style={Styles.container}>
-
       <Image style={Styles.image} source={{ uri: 'https://www.designfreelogoonline.com/wp-content/uploads/2015/10/000610-simple-round-logo-design-free-round-logos-02.png', }} />
 
       <View style={Styles.inputView}>
         <TextInput
-          // onFocus={() => style = { backgroundColor: 'transparent' }}
           style={Styles.TextInput}
           placeholder="Email"
           placeholderTextColor="#003f5c"
@@ -37,7 +39,6 @@ const App = () => {
           placeholderTextColor="#003f5c"
           onChangeText={(password) => { setPassword(password) }}
           secureTextEntry={true}
-          // textContentType={'password'}
           autoComplete='password'
         />
       </View>
@@ -49,8 +50,6 @@ const App = () => {
       <TouchableOpacity style={Styles.loginBtn}>
         <Text style={Styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
-
-
     </View>
   );
 };
@@ -62,7 +61,8 @@ const Styles = StyleSheet.create(
       flex: 1,
       backgroundColor: '#ffe',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      // padding: 10,
     },
     image: {
       marginBottom: 40,
@@ -98,7 +98,7 @@ const Styles = StyleSheet.create(
       alignItems: 'center',
       justifyContent: 'center',
       marginBottom: 40,
-      backgroundColor: '#d9f0Ca'
+      backgroundColor: '#d9f0Cf'
     }
   }
 )
